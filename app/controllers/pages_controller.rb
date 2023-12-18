@@ -17,7 +17,10 @@ class PagesController < ApplicationController
         @page = Page.new(page_params)
         @page.save
         redirect_to @page
-        # @page = Page.new(params)
-        # skipping render text: params.to_json
     end
+
+    def edit
+        @page = Page.find(params[:id])
+    end
+
 end
